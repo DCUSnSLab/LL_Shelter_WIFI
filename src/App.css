@@ -7,16 +7,19 @@ html, body {
   height: 100%;
 }
 
-body {
+.body {
   display: flex;
   margin: 0;
-  background-image: url('../public/wifi.png');
+  background-image: url('../public/background.png');
   background-repeat: no-repeat;
   /*width: 100%;*/
   /*height: 100%;*/
   /*margin: 0 auto;*/
   background-position: center top;
   background-size: cover;
+
+  /*justify-content: center;*/
+  /*align-items: center;*/
 }
 
 #box{
@@ -34,7 +37,7 @@ ul {
 }
 
 .wrap {
-  margin: auto;
+  /*margin: auto;*/
 }
 
 .wrap .logo {
@@ -42,16 +45,25 @@ ul {
   margin-bottom: 10px;
 }
 
-.wrap .logo h1 {
+.logo h1 {
   margin: 0;
   font-size: 1.5rem;
   position: absolute;
-  top: 2.5%;
+  font-family: yg-jalnan;
+  top: -1%;
   left: 25.5%;
+}
+
+.wrap {
+  margin: 0;
+  position: absolute;
+  top: 3%;
+  /*left: 25.5%;*/
   font-family: 'yg-jalnan';
 }
 
 .wrap .contents {
+  display: inline-block;
   padding: 50px;
   background-color: #ffffff;
   border: 1px solid #dadada;
@@ -62,7 +74,7 @@ ul {
 
 #form__wrap {
   margin: 0 auto;
-  width: 460px;
+  width: 100%;
   font-size: 1rem;
 }
 
@@ -142,17 +154,23 @@ label.required::after{
   cursor: not-allowed;
 }
 
-@media (max-width: 768px) {
+/* Tablet Device */
+@media all and (min-width:768px) and (max-width:1024px) {
+  /*사용자 해상도가 768px 이상이고 1024px 이하일 때 이 코드가 실행됨. 아이패드 또는 비교적 작은 해상도의 랩탑이나 데스크톱에 대응하는 코드를 작성한다.*/
   .wrap {
-    min-width: 280px;
-    padding: 20px;
-  }
-
-  #form__wrap {
-    max-width: 460px;
-    width: auto;
+    top: 10%;
+    left: 10%;
+    right: 10%;
   }
 }
+
+/* Desktop Device */
+@media all and (min-width:1020px) {
+  /*사용자 해상도가 1025px 이상일 때 이 코드가 실행됨. 1025px 이상의 랩탑 또는 데스크톱에 대응하는 코드를 작성한다.*/
+
+}
+
+
 
 @font-face {
   font-family: 'yg-jalnan';

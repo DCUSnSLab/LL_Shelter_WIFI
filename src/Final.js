@@ -48,9 +48,9 @@ function  FinalPage() {
     return (
         <div>
             <img src={setImg[0]}
-                style={{width : '100%',
+                style={{width : '90%',
                     height : '350px',
-                    border: '0px',
+                    border: '2px solid black' ,
                     top: '0px',
                     left: '0px'
                 }}/>
