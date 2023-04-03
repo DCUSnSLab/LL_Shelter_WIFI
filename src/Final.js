@@ -47,7 +47,7 @@ function  FinalPage() {
 
     return (
         <div>
-            <img src={setImg[0]}
+            <img src={process.env.PUBLIC_URL + "simdir" + setImg[0]}
                 style={{width : '90%',
                     height : '350px',
                     border: '2px solid black' ,
