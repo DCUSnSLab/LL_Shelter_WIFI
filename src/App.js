@@ -1,10 +1,44 @@
-// 개인정보 이용동의 페이
+// 개인정보 이용동의 페이지
 import React, {useCallback, useEffect} from 'react';
 import { useState } from 'react';
 import {Route, Routes, Link} from "react-router-dom";
 import './App.css';
+//import mqtt from 'mqtt';
+//import './MQTT.js';
+import mqtt from "mqtt/dist/mqtt";
+
 
 function App() {
+  const brokerUrl = 'mqtt://203.250.33.151:1883';
+  // const brokerUrl = 'mqtt://118.67.128.157:1883';
+  const topic = 'wifi/S001';
+
+  const options = {
+  username: 'dgo2o',
+  password: 'dgo2o!@',
+};
+
+  const client = mqtt.connect(brokerUrl);
+  const sendMessageToMqttBroker = (message) => {
+    const topic = 'wifi/S001';
+    let time = new Date();
+    message = time;
+    const payload = JSON.stringify(message);
+    client.publish(topic, payload);
+  };
+
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    sendMessageToMqttBroker({message});
+  };
+
+  const handleInputChange = (event) => {
+    setMessage(event.target.value);
+  };
+
+
   // const backend_url = ""
   const data = [{id: 'termsOfService'}, {id : 'privacyPolicy'}, {id: 'allowPromotions'}];
   const genAge = [{id: 'gender'}, {id:'age'}];
@@ -172,7 +206,7 @@ function App() {
                   </div>
                 </li>
               </ul>
-              <Link to='/Final'><button className="next-button" id="BTN" disabled={able}>확인</button></Link>
+              <Link to='/Final'><button className="next-button" id="BTN" disabled={able} onClick={sendMessageToMqttBroker}>확인</button></Link>
               {/*<button type="submit" className="next-button" id="BTN" onClick={move} disabled={!able} >확인</button>*/}
 
 
