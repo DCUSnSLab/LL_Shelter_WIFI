@@ -7,12 +7,17 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/react-responsive": "^8.0.5",
+    "buffer": "^6.0.3",
     "express": "^4.18.2",
+    "mqtt": "^4.3.7",
+    "mqtt-react-hooks": "^3.0.0-alpha.2",
+    "paho-mqtt": "^1.1.0",
     "react": "^18.2.0",
+    "react-app-polyfill": "^3.0.0",
     "react-dom": "^18.2.0",
     "react-responsive": "^9.0.0",
     "react-router-dom": "^6.4.3",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4",
     "websockets": "^0.2.0"
   },
@@ -39,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "url": "^0.11.0"
   }
 }
