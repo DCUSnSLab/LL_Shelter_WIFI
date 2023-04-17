@@ -9,9 +9,9 @@ import mqtt from "mqtt/dist/mqtt";
 
 
 function App() {
-  const brokerUrl = 'mqtt://203.250.33.151:1883';
+  const brokerUrl = 'http://192.168.50.45:3000';
   // const brokerUrl = 'mqtt://118.67.128.157:1883';
-  const topic = 'wifi/S001';
+  // const topic = 'wifi/S001';
 
   const options = {
   username: 'dgo2o',
